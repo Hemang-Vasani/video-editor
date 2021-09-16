@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/shareon/dist/shareon.min.css" rel="stylesheet" /> -->
+
+    <title>Document</title>
+    <style>
+        body {
+            margin: 40px auto;
+            max-width: 650px;
+            background-color: #4444;
+            text-align: center;
+        }
+        
+        #videPlayer {
+            width: 90%;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 12px 12px 20px #000000ba;
+        }
+        
+        #download-vid-btn {
+            margin: 20px;
+            align-items: center;
+        }
+        
+        .fa,
+        .fab {
+            padding: 12px 7px;
+            border-radius: 7px;
+            font-size: 20px;
+            width: 32px;
+            /* height: 32px; */
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+        }
+        
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+        
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+        
+        .fa-google {
+            background: #dd4b39;
+            color: white;
+        }
+        
+        .fa-linkedin {
+            background: #007bb5;
+            color: white;
+        }
+        
+        .fa-youtube {
+            background: #bb0000;
+            color: white;
+        }
+        
+        .fa-instagram {
+            background: #125688;
+            color: white;
+        }
+        
+        .fa-pinterest {
+            background: #cb2027;
+            color: white;
+        }
+        
+        .fa-telegram {
+            background: #0088cc;
+            color: white;
+        }
+        
+        .fa-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+        
+        .fa-facebook-messenger {
+            background: #006AFF;
+            color: white;
+        }
+        
+        .btn {
+            background: #2D3039;
+            color: white;
+            padding: 13px 20px;
+            border: 0;
+            border-radius: 7px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 7px;
+        }
+        
+        button,
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            color: #777;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.1;
+            letter-spacing: 2px;
+            text-transform: capitalize;
+            text-decoration: none;
+            white-space: nowrap;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+        
+        button:hover,
+        .button:hover {
+            border-color: #cdd;
+        }
+        
+        .share-button,
+        .copy-link {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        
+        .share-button,
+        .share-dialog {
+            /* position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); */
+            margin-top: 25px;
+        }
+        
+        .share-dialog {
+            display: none;
+            width: 95%;
+            max-width: 500px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, .15);
+            z-index: -1;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+        
+        .share-dialog.is-open {
+            display: block;
+            z-index: 2;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .targets {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .close-button {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+        }
+        
+        .close-button svg {
+            margin-right: 0;
+        }
+        
+        .link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #eee;
+        }
+        
+        .pen-url {
+            margin-right: 15px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <video id="videPlayer" controls autoplay>
+        <source src="https://mr-promotion.s3.ap-south-1.amazonaws.com/company-video/<%= data %>" type="video/mp4">
+
+    </video>
+    <div>
+        <button id="download-vid-btn" class="btn btn-primary"><a href="https://mr-promotion.s3.ap-south-1.amazonaws.com/company-video/<%= data %>" id="d-video" download>Download Video</a>
+        </button>
+    </div>
+    <!-- <div style="display: none;">
+        <div id="share"> -->
+            <!-- <div class="shareon" data-url="">
+        <a class="facebook"></a>
+        <a class="linkedin"></a>
+        <a class="pinterest"></a>
+        <a class="mastodon"></a>
+        <button class="telegram"></button>
+        <button class="twitter"></button>
+        <button class="whatsapp"></button>
+        <a class="whatsapp"></a>
+    </div> -->
+        <!-- </div>
+        <button class="share-button" type="button" title="Share this article">
+        <svg>
+            <use href="#share-icon"></use>
+        </svg>
+        <span>Share</span>
+    </button>
+        <svg class="hidden">
+        <defs>
+            <symbol id="share-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-share">
+                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                <polyline points="16 6 12 2 8 6"></polyline>
+                <line x1="12" y1="2" x2="12" y2="15"></line>
+            </symbol>
+        </defs>
+    </svg>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/shareon/dist/shareon.min.js"></script>
+<script>
+    let dlink = "https://mr-promotion.s3.ap-south-1.amazonaws.com/company-video/<%= data %>";
+    document.getElementById("d-video").href = dlink;
+    document.getElementById("share").innerHTML = `<div class="shareon" data-url = ${dlink}>
+        <a class="facebook fa fa-facebook"></a>
+        <a class="linkedin fa fa-linkedin"></a>
+        <a class="pinterest fa fa-pinterest"></a>
+        <a class="telegram fa fa-telegram"></a>
+        <a class="twitter fa fa-twitter"></a>
+        <a class="whatsapp fa fa-whatsapp"></a>
+    </div>`;
+    let shareButton = document.querySelector('.share-button');
+    let shareDialog = document.querySelector('.share-dialog');
+    let closeButton = document.querySelector('.close-button');
+
+    shareButton.addEventListener('click', event => {
+        if (navigator.share) {
+            navigator.share({
+                    title: `ZYDUS FATHER'S DAY`,
+                    url: dlink
+                }).then(() => {
+                    console.log('Thanks for sharing!');
+                })
+                .catch(console.error);
+        } else {
+            // shareDialog.classList.add('is-open');
+            console.log('in else')
+        }
+    }); -->
+
+    <!-- // closeButton.addEventListener('click', event => {
+    //     shareDialog.classList.remove('is-open');
+    // }); -->
+</script>
+
+</html>

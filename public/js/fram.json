@@ -1,0 +1,65 @@
+{
+    "error": true,
+    "message": "Fram List.",
+    "data": [{
+
+            "image": "/images/01.png",
+            "image_type": "last",
+            "fram-no": "1",
+            "add-font-type": "Noto Sans",
+            "add-font-size": "7px",
+            "add-font-color": "#f0f0f0",
+            "add-top": "11px",
+            "add-left": "11px",
+
+            "name-font-type": "Noto Sans",
+            "name-font-size": "13px",
+            "name-font-color": "#f0f0f0",
+            "name-left": "145px",
+            "name-top": "66px",
+
+            "loc-font-type": "Noto Sans",
+            "loc-font-size": "7px",
+            "loc-font-color": "#f0f0f0",
+            "loc-top": "11px",
+            "loc-left": "11px",
+
+            "email-font-type": "Noto Sans",
+            "email-font-size": "7px",
+            "email-font-color": "#f0f0f0",
+            "email-top": "11px",
+            "email-left": "11px"
+        },
+
+        {
+
+            "image": "/images/02.png",
+            "image_type": "first",
+            "fram-no": "1",
+            "add-font-type": "Noto Sans",
+            "add-font-size": "8px",
+            "add-font-color": "#f0f0f0",
+            "add-top": "57px",
+            "add-left": "148px",
+
+            "name-font-type": "Noto Sans",
+            "name-font-size": "11px",
+            "name-font-color": "#f0f0f0",
+            "name-left": "148px",
+            "name-top": "40px",
+
+            "loc-font-type": "Noto Sans",
+            "loc-font-size": "8px",
+            "loc-font-color": "#f0f0f0",
+            "loc-top": "70px",
+            "loc-left": "148px",
+
+            "email-font-type": "Noto Sans",
+            "email-font-size": "8px",
+            "email-font-color": "#f0f0f0",
+            "email-top": "82px ",
+            "email-left": "148px"
+        }
+
+    ]
+}
